@@ -45,6 +45,7 @@ impl WsMeta {
         url: impl AsRef<str>,
         protocols: impl Into<Option<Vec<&str>>>,
     ) -> Result<(Self, WsStream), WsErr> {
+    ::tracing::warn!("Connecting over WASM using patched version of ws_stream_wasm");
         let res = match protocols.into() {
             None => WebSocket::new(url.as_ref()),
 
