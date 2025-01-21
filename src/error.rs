@@ -103,6 +103,10 @@ pub enum WsErr
 	#[ error( "Received a message that is neither ArrayBuffer, String or Blob." ) ]
 	//
 	UnknownDataType,
+	
+	/// A minor patch
+	#[error("Received an undocumented error code from the browser implementation")]
+	UndocumentedErrorOcurred,
 }
 
 
